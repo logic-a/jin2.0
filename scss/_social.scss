@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+
+/*==================================================
+ * ソーシャルボタン
+ *================================================*/
+#twitter {background-color: #00acee;}
+#facebook {background-color: #3b5998;}
+#line {background-color: #00c300;}
+#hatena {background-color: #007fc5;}
+#pocket {background-color: #EE4056;}
+ 
+/* ボタン設定 */
+.sns-area {
+	width: 100%; margin: 0 auto 60px;display: block;
+	@include mq () {
+		max-width: $main-width;
+		overflow: hidden;
+	}
+}
+.sns-area ul{height:auto;}
+ 
+ /** * ラインボタン769px　以上の場合は非表示 */ 
+@media screen and (min-width: 769px) {.visible-769{
+   display: none !important;
+}}
+ 
+/** * 画面の横幅が768px以上の場合のスタイル記入 */
+@media screen and (min-width: 769px) {.sns-share {
+   float: left;
+   width: 24%;
+   margin: 0 0.5% 0 0.5%;
+   display: inline-block;
+}}
+ 
+/** * 画面の横幅が768pxまでの場合のスタイル記入 */
+@media screen and (max-width: 768px) {.sns-share {
+   float: left;
+   width: 19%;
+   margin: 0 0.5% 0 0.5%;
+   display: inline-block;
+}}
+ 
+.sns-link {
+   display: block;
+   text-align: center;
+   color: #fff !important;
+   font-size: 14px !important;
+   padding: 10px 0 !important;
+   box-sizing: border-box;
+   border-radius: 3px;
+   text-decoration: none;
+}
+.sns-link:hover {
+   text-decoration: none !important;
+   filter:alpha(opacity=70);
+   -moz-opacity: 0.70;
+   opacity: 0.70;
+}
+
+
+
+/*==================================================
+ * トップ　ソーシャルコンテンツ
+ *================================================*/
+.instagram {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: $sns_mb;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		li {
+			width: 47%;
+			overflow: hidden;
+			a {
+				.image {
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+				.title {
+					display: none;
+				}
+			}
+		}
+		&.two li {
+			//2
+			width: 42vw;
+			height: 42vw;
+			margin-bottom: 5vw;
+			@include mq () {
+				width: ($main-width / 2.1);
+				height: ($main-width / 2.1);
+				margin-bottom: ($main-width / 2.1) / 24;
+			}
+		}
+		&.three li {
+			//3
+			width: 28vw;
+			height: 28vw;
+			margin-bottom: 2vw;
+			@include mq () {
+				width: ($main-width / 3.1);
+				height: ($main-width / 3.1);
+				margin-bottom: ($main-width / 3.1) / 24;
+			}
+		}
+		&.four li {
+			//4
+			width: 21vw;
+			height: 21vw;
+			margin-bottom: 1.5vw;
+			@include mq () {
+				width: ($main-width / 4.1);
+				height: ($main-width / 4.1);
+				margin-bottom: ($main-width / 4.1) / 24;
+			}
+		}
+	}
+}
+.twitter {
+	section {
+		//height: 50vh;
+		//overflow: hidden;
+		margin-bottom: $sns_mb;
+		padding: 0 5%;
+		&.on {
+			height: auto;
+			overflow: auto;
+		}
+	}
+}
+.facebook {
+	section {
+		margin-bottom: 0;
+	}
+}
+.instagram, .twitter, .facebook {
+	section {
+		margin-top: 3vh;
+	}
+}

@@ -1,0 +1,246 @@
+//tab controller
+#tab-1-radio:checked ~ #tabs li#tab-1, #tab-2-radio:checked ~ #tabs li#tab-2, #tab-3-radio:checked ~ #tabs li#tab-3 {
+	background: $color-key;
+	label i {
+		transform:rotate(-15deg);
+		//rotate: -15deg;
+	}
+}
+#tab-1-radio:checked ~ #panels #panel-1, #tab-2-radio:checked ~ #panels #panel-2, #tab-3-radio:checked ~ #panels #panel-3 {
+	height: auto;
+	padding-top: 6vmin;
+	padding-bottom: 6vmin;
+	background: $color-none;
+}
+
+
+
+
+
+.panel-radios {
+	display: none;
+}
+ul#tabs {
+	display: flex;
+	justify-content: center;
+	border-bottom: 2px solid $color-key;
+	padding-bottom: 1px;
+	li {
+		display: block;
+		width: 100%;
+		color: #fff;
+		background: $color-sub;
+		label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			padding: 0.4em 0;
+			text-align: center;
+			cursor: pointer;
+			box-sizing: border-box;
+			cursor: pointer;
+			@include mq() {
+				font-size: 1.8rem;
+				padding: 0.8em 0;
+			}
+			i {
+				font-size: 1.6rem;
+				margin-right: 0.3em;
+				@include mq() {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+}
+#panels {
+	
+	&>section {
+		height: 0;
+		padding: 0;
+		border: none;
+		overflow: hidden;
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&>p {
+			text-align: center;
+			width: 100%;
+			padding: 0;
+			@include jizume;
+			@include mq () {
+				font-size: 1.8rem;
+				line-height: 1.4;
+			}
+		}
+		section {
+			width: 100%;
+			margin-top: 5vmin;
+			float: left;
+			@include mq () {
+				margin-top: 4px;
+			}
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			span {
+				display: block;
+				width: 100%;
+				//margin-top: 1em;
+				font-size: 1rem;
+				color: #a77;
+			}
+			&:nth-child(2) {
+				width: 100%;
+				@include mq () {
+					margin-bottom: 16px;
+				}
+				.kv img {
+					width: 96vw;
+					height: 48vw;
+					@include mq () {
+						width: 100%;
+						height: $main-width / 2;
+					}
+				}
+				span {
+					margin-top: 0;
+					@include mq () {
+						font-size: 1.2rem;
+						margin-top: 0.5em;
+					}
+				}
+			}
+			&:not(:nth-child(2)) a {
+				display: flex;
+				h2 {
+					width: 55vw;
+					font-size: $font_m;
+					margin-left: 5vw;
+					padding: 0;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					align-content: center;
+					@include mq () {
+						margin-left: 2em;
+						width: auto;
+						font-size: 1.8rem;
+					}
+				}
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+		.kv {
+			img {
+				width: 40vw;
+				height: 24vw;
+				object-fit: cover;
+				@include mq () {
+					width: ($main-width / 1.616) / 2;
+					height: ($main-width / 1.616) / 4;
+				}
+			}
+		}
+		#searchform {
+			display: block;
+			width: 100%;
+			label {
+				display: block;
+				font-family: $mincho;
+				text-align: center;
+				font-size: 5vmin;
+				margin: 1em 0 0;
+				padding-bottom: 0.1em;
+				border-bottom: 1px solid;
+				@include mq () {
+					font-size: 2.0rem;
+				}
+			}
+			div {
+				display: flex;
+				flex-wrap: nowrap;
+				justify-content: center;
+				margin-top: 3vh;
+			}
+			input[type="text"] {
+				display: inline-block;
+				border: 1px solid #bbb;
+				width: 70%;
+				height: 2em;
+				margin: 0;
+				padding: 0 0.3em;
+				font-size: 1.6rem;
+				box-sizing: border-box;
+				border-right: none;
+				border-radius: 3px 0 0 3px;
+			}
+			input[type=submit] {
+				font-family: FontAwesome;
+				display: block;
+				width: 3em;
+				height: 3.2rem;
+				margin: 0;
+				padding: 0;
+				font-size: 1.3rem;
+				color: #fff;
+				background: #000b00;
+				box-sizing: border-box;
+				border-radius: 0 3px 3px 0;
+			}
+		}
+		section.category {
+			width: 100%;
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			flex-wrap: wrap;
+			height: auto;
+			transition: 0.2s;
+			section {
+				width: 100%;
+				float: none;
+			}
+			.hide {
+				height: 0;
+				margin: 0;
+				overflow: hidden;
+			}
+			.show_all {
+				text-align: center;
+				font-size: $font_m;
+				margin: 1em 0 0;
+				cursor: pointer;
+			}
+		}
+		ul.tags {
+			margin-top: 3vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			li {
+				display: inline-block;
+				margin: 0.5em 0.5em 0 0;
+				padding: 0.3em 0.9em;
+				color: #000;
+				border: 1px solid;
+				border-radius: 2em;
+				&:hover {
+					color: #fff;
+					background: #000;
+				}
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

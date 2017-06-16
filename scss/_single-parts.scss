@@ -1,0 +1,73 @@
+.saying {
+	width: 80vw;
+	margin: 10vh auto;
+	border-top: 1px solid $color-sub;
+	@include mq () {
+		width: 100%;
+	}
+	.inner {
+		margin: 5.5vmin;
+		overflow: visible;
+	}
+	.author {
+		@include mq () {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			a {
+				width: 12%;
+			}
+			img {
+				width: 100%;
+			}
+			h2 {
+				width: 80%;
+				font-size: 2rem;
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	img {
+		@extend %memberImg;
+	}
+	h2 {
+		@extend %h2;
+		padding: 0;
+		span {
+			color: $color-key;
+		}
+	}
+	blockquote {
+		@extend %bq;
+		margin-bottom: 0;
+		@include mq () {
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+	p {
+		@extend %p;
+		&.great {
+			font-size: 1.2rem;
+			letter-spacing: 0;
+		}
+	}
+	a {
+		@extend %a;
+		&[target="_blank"] {			
+			&:before {
+				content: "\f08e";
+				font-family: FontAwesome;
+			}
+		}
+	}
+}
+
+.recommend {
+	margin: 16.5vmin 5.5vmin;
+	border-top: 1px solid #000;
+	padding-top: 5vh;
+}

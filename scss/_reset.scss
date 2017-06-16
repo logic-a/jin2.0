@@ -1,0 +1,80 @@
+@charset "utf-8";
+/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+html{
+	color:#000;background:#FFF;font-size:62.5%;
+}
+body {
+	font-size:10px; font-size:1.0rem;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,span,fieldset,legend,input,button,textarea,select,p,th,td,hr{
+	margin:0;padding:0;
+}
+table{
+	border-collapse:collapse;border-spacing:0;
+}
+fieldset,img{
+	border:0;
+}
+address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{
+	font:inherit;
+}
+del,ins{
+	text-decoration:none;
+}
+li{
+	list-style:none;
+}
+caption,th{
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;font-weight:normal;
+}
+q:before,q:after{
+	content:'';
+}
+abbr,acronym{
+	border:0;font-variant:normal;
+}
+sup{
+	vertical-align:baseline;
+}
+sub{
+	vertical-align:baseline;
+}
+legend{
+	color:#000;
+}
+
+/* IEのHTML5対応 */
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{
+　　display:block;
+}
+
+
+
+/* clearfix */
+.clearfix:after{
+    content: ".";
+    display: block;
+    height: 0;
+    font-size:0;
+    clear: both;
+	visibility:hidden;
+}
+.clearfix{
+	display: inline-block;
+}
+/* Hides from IE Mac */
+* html .clearfix{
+	height: 1%;
+}
+.clearfix{
+	display:block;
+}
+/* End Hack */

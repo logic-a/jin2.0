@@ -1,0 +1,178 @@
+header {
+	&.top {
+		width: 100vw;
+		height: 100vh;
+		min-height: 50vw;
+		margin: 0;
+		padding: 0;
+		background: center center no-repeat url(img/forest.jpg);
+		background-size: cover;
+		overflow: hidden;
+		position: relative;
+		.hero {
+			width: 100%;
+			height: 20vh;
+			position: absolute;
+			top: -10vh;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			h1 {
+				margin: 0 auto 0;
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: linear-gradient(-135deg, rgba(#000, 0.5), rgba(#000, 0.8));
+			background: linear-gradient(45deg, rgba($color-sub, 0.9), rgba($color-dic, 0.9), rgba($color-point, 0.3), rgba($color-key, 0.4));
+			opacity: 0.95;
+			background-size: 600% 600%;
+			animation: AnimationName 20s ease infinite;
+		}
+		@keyframes AnimationName {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 50%}
+			100%{background-position:0% 50%}
+		}
+	}
+	&.single {
+		height: 12vh;
+	}
+	.inner {
+		opacity: 0.9;
+		max-width: 100vh;
+		margin: auto;
+		&.option3 {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: flex-start;
+			justify-content: flex-end;
+			justify-content: center;
+			padding: 4vh 5%;
+			h1 {
+				width: 10%;
+				max-width: 55px;
+				margin: 0;
+				margin-right: 2%;
+				box-sizing: border-box;
+			}
+			p {
+				padding: 0;
+				font-size: 2.2rem;
+				color: $color-sub;
+				text-shadow: none;
+			}
+		}
+	}
+	h1 {
+		display: block;
+		width: 30vmin;
+		max-width: 120px;
+		margin: 6vh auto 0;
+		padding: 0;
+		border: none;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	p {
+		margin: 0.5em 0;
+		padding: 0;
+		font-family: 'Julius Sans One', sans-serif;
+		text-align: center;
+		color: $color-sub;
+		font-size: 10vmin;
+		font-size: 3.8rem;
+		//text-shadow: 0 0 0.1em rgba(0,0,0,0.5);
+	}
+	.option1 p {
+		color: #fff;
+	}
+	span {
+		max-width: 80vw;
+		margin: auto;
+		text-align: center;
+		font-size: $font_s;
+		color: #fff;
+		display: block;
+		//text-shadow: 0 0 0.1em rgba(0,0,0,0.5);
+		white-space: nowrap;
+
+	}
+	
+	nav {
+		&.slide {
+			transform: translateX(100%);
+			transition: transform 150ms linear;
+			will-change: transform;
+			width: 100vw;
+			height: 100vh;
+			background: #fff;
+			background: rgba(255, 255, 255, 0.1);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+			position: fixed;
+			right: 0;
+			top: 0;
+			z-index: 10001;
+			overflow-x: hidden;
+			.inner {
+				
+			}
+			ul {
+				margin-top: 4.2rem;
+				background: rgba(0, 0, 0, 0.3);
+				li {
+					display: block;
+					border: 1px solid #aaa;
+					border-left: none;
+					border-right: none;
+					padding: 1em;
+					font-size: 1.4rem;
+					color: #fff;
+					text-decoration: none;
+					background: #fff;
+					background: rgba(255, 255, 255, 0.3);
+					position: relative;
+					&:not(:last-child) {
+						border-bottom: none;
+					}
+					&:after {
+						content: "keyboard_arrow_down";
+						font-family: 'Material Icons';
+						font-size: 2rem;
+						position: absolute;
+						right: 1em;
+						top: 50%;
+						margin-top: -1rem;
+					}
+					a {
+						height: 100%;
+						padding: 1em;
+						color: inherit;
+						text-decoration: inherit;
+						text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+						i {
+							font-size: 1.6rem;
+							display: inline-block;
+							width: 1em;
+							text-align: center;
+							margin-right: 0.5em;
+						}
+					}
+				}//li
+			}//ul
+		}//.slide
+	}//nav
+	#menu:checked ~ .slide {
+		transform: none;
+	}
+}//header

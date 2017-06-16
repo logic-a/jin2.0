@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+@mixin jizume {
+	font-feature-settings: "palt";
+	letter-spacing: 0.06em;
+}
+
+%memberImg {
+	width: 30%;
+	height: auto;
+	display: block;
+	margin: 3vh auto;
+}
+
+%h1 {
+	margin-top: 8vh;
+	@include jizume;
+}
+%h2 {
+	padding: 2em 0;
+	margin: 0 0 -1.4rem;
+	font-family: $gothic;
+	font-weight: 100;
+	color: $color-sub;
+	line-height: 1.5;
+	@include jizume;
+	border: none;
+}
+%bq {
+	width: 80vw;
+	margin: 3vh 0;
+	margin-left: -5.5vmin;
+	position: relative;
+	padding: 1em;
+	background-color: #F0F0F0;
+	box-sizing: border-box;
+	z-index: 1;
+	@include mq () {
+		max-width: 120%;
+		margin-left: -10%;
+	}
+	p {
+		position: relative;
+		z-index: 3;
+	}
+	&:before {
+		content: "“";
+		font-size: 1000%;
+		line-height: 0.8em;
+		font-family: 'Times New Roman' ,sans-serif;
+		color: #e0e0e0;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+	}
+	&:after {
+		content: "”";
+		font-size: 1000%;
+		line-height: 0em;
+		font-family: 'Times New Roman' ,sans-serif;
+		color: #e0e0e0;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+	}
+}
+%p {
+	padding: 1em 0 0;
+	font-size: 1.4rem;
+	color: $color-sub;
+	line-height: 2.0;
+	@include jizume;
+	letter-spacing: 0.1em;
+}
+%a {
+	@include jizume;
+	color: $color-dic + #333;
+	margin: 0 0.5em;
+}
+%time {
+	margin-top: 2vh;
+	display: block;
+	font-family: $mincho;
+	font-size: 1rem;
+	color: #a77;
+}
+%kv {
+	margin-top: 8vh;
+	img {
+		display: block;
+		width: 100%;
+		height: 49.4vw;
+		max-width: 100%;
+		max-height: 300px;
+		/* height: 61.8vw; */
+		object-fit: cover;
+		margin: auto;
+	}
+}
+%table {
+	width: 80vw;
+	margin: 5vh;
+	margin-left: -5.5vmin;
+	border-collapse: separate;
+	border: 1px solid #ddd;
+	@include mq () {
+		width: 120%;
+		margin-left: -10%;
+	}
+	tr {
+		
+		th {
+			display: block;
+			padding: 0.6em;
+			font-weight: bold;
+			background: $color-dic + #ddd;
+			@include mq () {
+				display: table-cell;
+			}
+		}
+		td {
+			display: block;
+			padding: 0.6em;
+			@include mq () {
+				display: table-cell;
+			}
+		}
+	}
+}
